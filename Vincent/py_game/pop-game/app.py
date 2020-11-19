@@ -22,6 +22,7 @@ import game_config as gc
 from pygame import display, event, image
 from animals import Animal, re_play
 from time import sleep, localtime, time
+import diy
 
 # to find the right img
 def find_index(x, y):
@@ -33,9 +34,9 @@ def find_index(x, y):
 def showResult(s, e):
     timi = localtime(e-s)
     titleFont = pygame.font.Font('freesansbold.ttf', 30)
-    titleSurf1 = titleFont.render('  Using time: %dmin%dsec  '%(timi[4], timi[5]), True, (255, 255, 255), (0, 155, 0))
-    screen.fill((0, 0, 0))
-    degrees1 = 0
+    titleSurf1 = titleFont.render('  Using time: %dmin%dsec  '%(timi[4], timi[5]), True, diy.result_bg_color, diy.result_font_color)
+    screen.fill((230, 230, 230))
+    degrees1 = diy.result_font_angle
     rotatedSurf1 = pygame.transform.rotate(titleSurf1, degrees1)
     rotatedRect1 = rotatedSurf1.get_rect()
     rotatedRect1.center = (Window_Width / 2, Window_Height / 2)

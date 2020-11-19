@@ -1,0 +1,26 @@
+{
+"animals":
+	{
+		"block_color":"(200, 200, 200)",
+		"skip":"False",
+		"col_margin": 2,
+		"row_margin": 2
+	},
+"app":
+	{
+		"result":
+		{	
+			"bg_color":"(255, 255, 255)",
+			"font_color": "(200, 155, 110)",
+			"font_angle": 0
+		} 
+	},
+"config":
+	{
+		"img_size": 128,
+		"screen_size": 512,
+		"col_num": 4,
+		"total_num": 16,
+		"margin": 4
+	}
+}

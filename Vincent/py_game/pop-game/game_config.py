@@ -18,13 +18,14 @@
 
 
 import os
+import diy
 
 # set constants
-IMAGE_SIZE = 128
-SCREEN_SIZE = 512
-NUM_TILES_SIDE = 4
-NUM_TILES_TOTAL = 16
-MARGIN = 4
+IMAGE_SIZE = diy.img_size
+SCREEN_SIZE = diy.screen_size
+NUM_TILES_SIDE = diy.col_num # 1~4
+NUM_TILES_TOTAL = diy.total_num  # 1~16
+MARGIN = diy.margin
 
 ASSET_DIR = "./assets"
 ASSET_FILES = [i for i in os.listdir(ASSET_DIR) if i[-3:].lower() == 'png']

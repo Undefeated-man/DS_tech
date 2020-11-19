@@ -21,6 +21,7 @@ import os
 import random
 import game_config as gc
 from pygame import image, transform
+import diy
 
 animals_count = dict((a, 0) for a in gc.ASSET_FILES)
 
@@ -37,11 +38,12 @@ class Animal:
         
         self.img_path = os.path.join(gc.ASSET_DIR, self.name)
         self.image = image.load(self.img_path)
-        self.image = transform.scale(self.image, (gc.IMAGE_SIZE - 2*gc.MARGIN,\
-        gc.IMAGE_SIZE - 2*gc.MARGIN))
+        self.image = transform.scale(self.image, (gc.IMAGE_SIZE - diy.col_margin*gc.MARGIN,\
+        gc.IMAGE_SIZE - diy.row_margin*gc.MARGIN)) # (column margin, row margin)
         self.box = self.image.copy()
-        self.box.fill((200, 200, 200))
-        self.skip = False
+        print(diy.block_color)
+        self.box.fill(diy.block_color)
+        self.skip = diy.skip
     
 def re_play():
     for a in gc.ASSET_FILES:
