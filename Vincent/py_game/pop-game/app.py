@@ -145,7 +145,7 @@ def main():
                         inner_loop = False
                         re_play()
                         break
-            
+            sleep(0.01)        
                 
 if __name__ == '__main__':
     pygame.init()
