@@ -2,7 +2,7 @@
 "animals":
 	{
 		"block_color":"(200, 200, 200)",
-		"skip":"False",
+		"skip":"True",
 		"col_margin": 2,
 		"row_margin": 2
 	},
@@ -17,8 +17,8 @@
 	},
 "config":
 	{
-		"img_size": 128,
-		"screen_size": 512,
+		"img_size": 200,
+		"screen_size": 800,
 		"col_num": 4,
 		"total_num": 16,
 		"margin": 4

@@ -33,8 +33,8 @@ def find_index(x, y):
 
 def showResult(s, e):
     timi = localtime(e-s)
-    titleFont = pygame.font.Font('freesansbold.ttf', 30)
-    titleSurf1 = titleFont.render('  Using time: %dmin%dsec  '%(timi[4], timi[5]), True, diy.result_bg_color, diy.result_font_color)
+    titleFont = pygame.font.Font('freesansbold.ttf', 65)
+    titleSurf1 = titleFont.render('  Used time: %dmin%dsec  '%(timi[4], timi[5]), True, diy.result_bg_color, diy.result_font_color)
     screen.fill((230, 230, 230))
     degrees1 = diy.result_font_angle
     rotatedSurf1 = pygame.transform.rotate(titleSurf1, degrees1)
@@ -55,6 +55,7 @@ def main():
         start_time = time()
         current_images = []
         matched = image.load("other_assets/matched.png")
+        matched = pygame.transform.scale(matched, (diy.screen_size, diy.screen_size))
         screen.blit(matched, (0, 0))
         display.flip()
         
@@ -101,7 +102,7 @@ def main():
                     tiles[idx1].skip = True
                     tiles[idx2].skip = True
                     sleep(0.2)
-                    screen.blit(matched, (0, 0))
+                    screen.blit(matched, (10, 10))
                     display.flip()
                     sleep(0.4)
                     current_images = []
@@ -114,7 +115,8 @@ def main():
             sleep(0.01)
         
         # would you like to replay?
-        screen.blit(image.load("other_assets/replay.png"), (0, 0))
+        replay = pygame.transform.scale(image.load("other_assets/replay.png"), (diy.screen_size, diy.screen_size))
+        screen.blit(replay, (0, 0))
         display.flip()
         sleep(0.01)
         
@@ -148,8 +150,8 @@ def main():
 if __name__ == '__main__':
     pygame.init()
     display.set_caption("Animals")
-    Window_Width = 512
-    Window_Height = 512
+    Window_Width = 800
+    Window_Height = 800
     screen = display.set_mode((Window_Width, Window_Height))
     
     # Game begin
